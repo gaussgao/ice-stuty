@@ -4,6 +4,7 @@ ICE on Java beginner log...
 # Hello World service & client
 
 ## 1 define directory 
+```html
 +---client
 |   \---src
 |       \---main
@@ -12,7 +13,8 @@ ICE on Java beginner log...
 |   \---src
 |       \---main
 |           \---java
-\---slice 
+\---slice
+```
 
 ## 2 gradle init
 gradle init
@@ -23,6 +25,7 @@ rootProject.name = 'printer'
 include 'client'
 include 'server'
 --- build.gradle ---
+```groovy
 plugins {
     id 'com.zeroc.gradle.ice-builder.slice' version '1.4.7' apply false
 }
@@ -51,9 +54,10 @@ subprojects {
         }
     }
 }
-
+```
 
 # 3 Slice
+```c
 module Demo
 {
     interface Printer
@@ -61,9 +65,10 @@ module Demo
         void printString(string s);
     }
 }
-
+```
 ## 4 Server
 --- PrinterI.java ---
+```java
 public class PrinterI implements Demo.Printer
 {
     public void printString(String s, com.zeroc.Ice.Current current)
@@ -71,7 +76,9 @@ public class PrinterI implements Demo.Printer
         System.out.println(s);
     }
 }
+```
 --- server.java ---
+```java
 
 public class Server
 {
@@ -96,10 +103,11 @@ public class Server
     }
 
 }
-
+```
 
 
 ## 5 Client
+```java
 public class Client
 {
     public static void main(String[] args)
@@ -116,6 +124,7 @@ public class Client
         }
     }
 }
+```
 
 ## 6 buid
 gradle :client:build
