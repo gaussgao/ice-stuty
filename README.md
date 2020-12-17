@@ -127,10 +127,13 @@ public class Client
 ```
 
 ## 6 buid
+```bash
 gradle :client:build
 gradle :server:client
-
+```
 ## 7 Run
+```bash
 cp ice.3.7.4.jar server/build/libs/
 java -jar server/build/libs/server.jar
 java -jar client/build/libs/client.jar
+```
