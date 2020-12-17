@@ -21,9 +21,11 @@ gradle init
 [basic]
 [groovy]
 --- settings.gradle ---
+```groovy
 rootProject.name = 'printer'
 include 'client'
 include 'server'
+```
 --- build.gradle ---
 ```groovy
 plugins {
